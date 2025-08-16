@@ -1,4 +1,4 @@
-⚡ EV Charging Station Utilization Analysis
+** EV Station Utilization Analysis **
 📌 Project Summary
 
 This project analyzes EV charging station usage across multiple Indian cities to identify utilization patterns, customer behavior, and revenue opportunities. The goal is to provide data-driven insights for optimizing EV infrastructure and improving the charging experience.
@@ -44,4 +44,4 @@ Enables better investment planning by spotting underutilized areas.
 
 Improves customer experience through reduced wait times and optimized charger allocation.
 
-✨ With these insights, stakeholders can make data-driven decisions for scaling EV charging infrastructure efficiently.    
+✨ With these insights, stakeholders can make data-driven decisions for scaling EV charging infrastructure efficiently.  
