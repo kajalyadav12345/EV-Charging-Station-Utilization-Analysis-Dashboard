@@ -1,87 +1,47 @@
-# EV-Charging-Station-Utilization-Analysis-Dashboard
-_ _ _
-📌 Project Overview
+⚡ EV Charging Station Utilization Analysis
+📌 Project Summary
 
-This Power BI dashboard analyzes Electric Vehicle (EV) charging station utilization, energy consumption, and revenue performance across multiple cities.
-The goal is to help EV infrastructure companies optimize station operations, improve charger placement, and maximize revenue.
-_ _ _
+This project analyzes EV charging station usage across multiple Indian cities to identify utilization patterns, customer behavior, and revenue opportunities. The goal is to provide data-driven insights for optimizing EV infrastructure and improving the charging experience.
 
-📊 Dataset Description
+🔑 Key Insights
+📊 Overall Performance
 
-The dataset contains 100 rows of EV charging session records with details such as:
+🔌 100 Charging Sessions analyzed
 
-Station_ID – Unique ID for each station
+⚡ 1,919.5 kWh total energy delivered
 
-City – Location of the charging station
+💰 ₹33,293 revenue generated
 
-Location_Lat / Location_Lon – GPS coordinates
+⏱️ 55 minutes average session duration
 
-Session_Start / Session_End – Start and end timestamps
+📍 15 stations across 5 cities included
 
-kWh_Delivered – Energy delivered during the session
+⚡ Operational Findings
 
-Price_per_kWh – Pricing for energy consumption
+Each session delivered an average of 19 kWh, showing preference for medium-to-long charging rather than short top-ups.
 
-Payment_Method – Card / UPI / Cash
+Revenue per session ≈ ₹333, reflecting a strong monetization trend.
 
-Charger_Type – Fast or Standard charger
+Session durations align with fast charger usage, but may create congestion during peak hours.
 
-Date, Hour, DayOfWeekName, MonthName – Derived for analysis
+📍 Location Insights
 
-Session_Duration_Minutes / Hours  
+Performance varies significantly across cities.
 
-_ _ _
+Identifies high-demand vs underutilized stations → guiding decisions for infrastructure expansion and load balancing.
 
-### ** Transform Data in Power Query**
-Add calculated columns:
-```powerquery
-// Extract Date only
-DateOnly = DateTime.Date([Session_Start])
+👥 Customer Behavior
 
-// Extract Hour
-Hour = Time.Hour([Session_Start])
+Payment Preferences: Mix of UPI, Card, and Cash, highlighting opportunities to encourage digital adoption.
 
-// Extract Day Name
-DayOfWeekName = Date.DayOfWeekName([Session_Start])
+Charger Type: Fast chargers deliver higher energy and revenue compared to slow chargers, confirming their critical role in network performance.
 
-// Extract Month Name
-MonthName = Date.MonthName([Session_Start])
+🚀 Business Impact
 
-** Create Measures in DAX**
-dax
-Copy
-Edit
-// Total Sessions
-Total Sessions = COUNTROWS(ev_charging_sample_100_enhanced)
+Helps EV infrastructure providers maximize revenue by identifying top-performing stations.
 
-// Total Energy Delivered
-Total kWh = SUM(ev_charging_sample_100_enhanced[kWh_Delivered])
+Enables better investment planning by spotting underutilized areas.
 
-// Total Revenue
-Total Revenue = SUM(ev_charging_sample_100_enhanced[Revenue])
+Improves customer experience through reduced wait times and optimized charger allocation.
 
-// Average Session Duration (Minutes)
-Avg Session Duration = AVERAGE(ev_charging_sample_100_enhanced[Session_Duration_Minutes])
-
-// Utilization Rate (%) - assuming 24 hrs available
-Utilization Rate = 
-DIVIDE(
-    SUM(ev_charging_sample_100_enhanced[Session_Duration_Hours]),
-    COUNTROWS(DISTINCT(ev_charging_sample_100_enhanced[Date])) * 24
-) * 100
-
-_ _ _
-
-💡 Key Insights from the Dashboard
-
-Peak Usage Hours: Most charging occurs between 6 PM – 9 PM, indicating after-work EV charging habits.
-
-Top Performing City: Bengaluru has the highest energy consumption and revenue.
-
-Fast Chargers contribute to 65% of total revenue despite being fewer in number.
-
-Weekend Traffic is higher, suggesting leisure travel impact.
-
-Station Utilization Gaps in certain cities highlight opportunities for marketing or relocation.
-
-Revenue – Calculated from kWh_Delivered × Price_per_kWh
+✨ With these insights, stakeholders can make data-driven decisions for scaling EV charging infrastructure efficiently.    
