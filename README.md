@@ -2,11 +2,7 @@
 
 ## 📌 Project Summary  
 This project analyzes **EV charging station usage** across multiple Indian cities to identify utilization patterns, customer behavior, and revenue opportunities.  
-The goal is to provide **data-driven insights** for optimizing EV infrastructure and improving the charging experience.  
-
----
-
-## 🔑 Key Insights  
+The goal is to provide **data-driven insights** for optimizing EV infrastructure and improving the charging experience.nsights  
 
 ### 📊 Overall Performance  
 - 🔌 **100 Charging Sessions** analyzed  
